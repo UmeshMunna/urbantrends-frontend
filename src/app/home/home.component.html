@@ -65,29 +65,37 @@
     </nav>
   </div> 
     
-<div id="bodyDiv" [ngClass]="{ 'blur-background': isSignupOpen }">
+  <div  [ngClass]="{ 'blur-background': isSignupOpen }">
 
-  <div>
-    <h2 class="homeBodyText">Explore your favorite outfits here...</h2>
-  </div>
-  <div class="home-search-bar">
-    <div class="search-bar">
-      <mat-form-field>
-        <input matInput placeholder="Search">    
-      </mat-form-field>
-      <button mat-button class="home-search-btn"
-        >
-          Find
-      </button> 
+    <div class="home-div-one">
+      <div>
+        <h2 class="homeBodyText">Explore your favorite outfits here...</h2>
+      </div>
+      <div class="home-search-bar">
+        <div class="search-bar">
+          <mat-form-field>
+            <input matInput placeholder="Search">    
+          </mat-form-field>
+          <button mat-button class="home-search-btn"
+            >
+              Find
+          </button> 
+        </div>
+      </div>
+    </div>
+    <div class="home-div-two">
+
+    </div>
+    <div class="home-div-three">
+
     </div>
   </div>
-</div>
-<nav>
-  <ul>
-    <li><a routerLink="/profile">Profile</a></li>
-    <li><a routerLink="/trends">Trends</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a routerLink="/profile">Profile</a></li>
+      <li><a routerLink="/trends">Trends</a></li>
+    </ul>
+  </nav>
 
 </body>
 </html>

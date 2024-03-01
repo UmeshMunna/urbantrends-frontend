@@ -1,4 +1,24 @@
-#bodyDiv {
+.home-div-one {
+    height: 600px; 
+    width: auto;
+    background-image: url('../../assets/images/shirts.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    
+  }
+
+  .home-div-two {
+    height: 600px; 
+    width: auto;
+    background-image: url('../../assets/images/dark_shop_edited.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    
+  }
+
+  .home-div-three {
     height: 600px; 
     width: auto;
     background-image: url('../../assets/images/dresses_edited.jpg');
@@ -7,6 +27,7 @@
     overflow-y: auto;
     
   }
+
   #headerDiv {
     height:93px; 
     width: 100%;
