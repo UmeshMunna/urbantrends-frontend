@@ -13,7 +13,7 @@ export class UserService {
   login(data: any): Observable<any> {
     console.log("LOGIN FORM DATA IN FRONTEND SERVICE ##### ");
     console.log(data);
-    return this.http.get(`${this.baseUrl}/login`, data);
+    return this.http.post(`${this.baseUrl}/login`, data);
   }
 
   signup(data: any): Observable<any> {

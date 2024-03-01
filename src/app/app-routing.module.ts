@@ -4,16 +4,20 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { TrendsComponent } from './trends/trends/trends.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './user/signup/signup.component';
-
+import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
-
   { path: 'home', component: HomeComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'profile', component: ProfileComponent },
+  {
+    path: 'user',
+    children: [
+      { path: 'signup', component: SignupComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'profile', component: ProfileComponent },
+    ]
+  },
   { path: 'trends', component: TrendsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-
 ];
 
 @NgModule({

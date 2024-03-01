@@ -43,6 +43,7 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.valid) {
       this.userService.signup(this.signupForm.value).subscribe({
         next: (response) => {
+          alert("Signup Success...");
           console.log('Signup successful', response);
           
         },

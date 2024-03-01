@@ -41,6 +41,7 @@ export class LoginComponent {
       console.log(this.loginForm.value);
       this.userService.login(this.loginForm.value).subscribe({
         next: (response) => {
+          alert("Login Success...");
           console.log('Login successful', response);
           
         },
