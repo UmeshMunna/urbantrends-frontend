@@ -1,0 +1,41 @@
+.overlay {
+    position: fixed;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 535px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    margin-left: 350px;
+    margin-top: 50px;
+    border-radius: 10px
+  }
+
+  .signup-form-fields{
+    margin-inline: 15px;
+    margin-top: 15px;
+    color: white;
+    
+  }
+
+  .model-headings{
+    margin-left: 50px;
+    margin-top: 20px;
+
+  }
+  
+  .signup-login-btn{
+    background-color: #072b4e;
+    margin-right: 15px;
+    width: 90px;
+    height: 40px;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+  
+  }

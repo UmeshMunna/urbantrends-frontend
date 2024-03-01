@@ -1,0 +1,53 @@
+
+<div class="overlay">
+<h3 class="model-headings">Signup</h3><hr style="background-color: white;"><br>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content class="dialog-content">
+
+        <mat-form-field class="signup-form-fields">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name" />
+        </mat-form-field>
+
+        <mat-form-field class="signup-form-fields">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" placeholder="Mobile" />
+        </mat-form-field>
+
+        <mat-form-field class="signup-form-fields">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Email" />
+        </mat-form-field>
+
+        
+        <mat-form-field class="signup-form-fields">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" placeholder="Address" />
+        </mat-form-field>
+
+        <div class="signup-form-fields">
+            <label>Profile Image</label>
+            <input type="file" formControlName="profilePicture" placeholder="Profile Photo" />
+        </div>
+
+
+        <mat-form-field class="signup-form-fields">
+            <mat-label>User</mat-label>
+            <input matInput formControlName="userType" placeholder="owner/customer" />
+        </mat-form-field>
+
+        <mat-form-field class="signup-form-fields">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Password" />
+        </mat-form-field>
+        
+              
+
+        <!-- Add more form fields as needed -->
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="signup-login-btn" (click)="closeDialog()">Close</button>
+        <button class="signup-login-btn" mat-button type="submit">Signup</button>
+    </mat-dialog-actions>
+    </form>
+</div>

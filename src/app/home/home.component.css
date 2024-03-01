@@ -1,0 +1,122 @@
+#bodyDiv {
+    height: 600px; 
+    width: auto;
+    background-image: url('../../assets/images/dresses_edited.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    
+  }
+  #headerDiv {
+    height:93px; 
+    width: 100%;
+    position: fixed ;
+    background-color: gray;
+    
+    overflow-y: auto;
+  }
+
+  #logo{
+    width: 200px;
+
+  }
+
+  .nav-item{
+    font-size: 18px;
+  }
+
+
+  .navbar img.rounded-circle {
+  width: 40px; 
+  height: auto;
+}
+
+.homeBodyText{
+  width: 600px;
+  margin-top: 150px;
+  margin-left: 100px;
+
+}
+
+
+
+.modal-open .bg-body-tertiary {
+  filter: blur(5px);
+}
+
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px; 
+}
+
+
+.modal-header {
+  background-color: #007bff; 
+  color: white; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+}
+
+
+.modal-body {
+  padding: 20px;
+}
+
+
+.modal-footer {
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px; 
+}
+
+  
+.custom-dialog-container {
+  margin-left: 50%;
+  display: flex;
+}
+
+.blur-background {
+  filter: blur(2px); 
+}
+
+.signup-login-btn{
+  background-color: #072b4e;
+  margin-right: 15px;
+  width: 90px;
+  height: 40px;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+
+}
+
+.home-search-btn{
+  background-color: transparent;
+  margin-left: 15px;
+  width: 100px;
+  height: 40px;
+  color: #072b4e;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.home-search-bar{
+  width: 350px;
+  height: 90px;
+  
+  /* border:2px solid #072b4e; */
+  background-blend-mode: luminosity;
+  margin-left: 100px;
+  margin-top: 30px;
+
+}
+
+.search-bar{
+
+  padding-top: 30px;
+
+padding-left: 10px;
+}

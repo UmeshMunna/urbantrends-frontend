@@ -1,0 +1,26 @@
+
+<div class="overlay">
+    <h3 class="model-headings">Login</h3><hr style="background-color: white;"><br>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-dialog-content class="dialog-content">
+    
+            <mat-form-field class="signup-form-fields">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Email" />
+            </mat-form-field>
+    
+            
+    
+            <mat-form-field class="signup-form-fields">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="Password" />
+            </mat-form-field>
+            
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button class="signup-login-btn" (click)="closeDialog()">Close</button>
+            <button class="signup-login-btn" mat-button type="submit">Login</button>
+        </mat-dialog-actions>
+        </form>
+    </div>
+    
