@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 //import {logo} from '../src/assets/images/logo.png';
 //import logo from  '../../assets/images/logo.jpg';
 //import homeBackground from '../../assets/images/dresses.jpg'
-import { ProfileComponent } from '../user/profile/profile.component';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupComponent } from '../user/signup/signup.component';

@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { TrendsComponent } from './trends/trends/trends.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './user/signup/signup.component';
-import { ProfileComponent } from './user/profile/profile.component';
 import { LoginComponent } from './user/login/login.component';
 
 import { MatInputModule } from '@angular/material/input';
@@ -17,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccountComponent } from './user/account/account.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TrendsComponent,
     HomeComponent,
     SignupComponent,
-    ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
