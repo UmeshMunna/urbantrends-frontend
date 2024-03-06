@@ -32,7 +32,7 @@
 
         <div class="signup-form-fields">
             <label>Profile Image</label>
-            <input type="file" formControlName="profilePicture" placeholder="Profile Photo" />
+            <input type="file" (change)="onFileSelected($event)" formControlName="profilePicture" placeholder="Profile Photo" />
         </div>
 
 

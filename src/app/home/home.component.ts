@@ -23,8 +23,6 @@ export class HomeComponent implements OnInit{
     isSignupOpen: boolean = false;
     isLoginOpen: boolean = false;
 
-
-  profilePicUrl: string = 'assets/images/profile-picture.jpg';
   logoUrl: string = '../../assets/images/logo.jpg'; 
   //logoUrl: string = '../../assets/images/logo.jpg';
 

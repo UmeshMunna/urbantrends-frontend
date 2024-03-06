@@ -29,16 +29,17 @@
   }
 
   #headerDiv {
-    height:93px; 
+    height:90px; 
     width: 100%;
     position: fixed ;
-    background-color: gray;
+    background-color: white;
     
     overflow-y: auto;
   }
 
   #logo{
-    width: 200px;
+    width: 120px;
+    height: 70px;
 
   }
 
@@ -102,11 +103,11 @@
 }
 
 .signup-login-btn{
-  background-color: #072b4e;
+  background-color: #1A3754;
   margin-right: 15px;
   width: 90px;
   height: 40px;
-  color: whitesmoke;
+  color: white;
   border: none;
   border-radius: 10px;
 
@@ -117,7 +118,7 @@
   margin-left: 15px;
   width: 100px;
   height: 40px;
-  color: #072b4e;
+  color: #1A3754;
   border: none;
   font-size: 20px;
   border-radius: 10px;

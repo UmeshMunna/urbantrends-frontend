@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../user.service';
 
@@ -10,23 +10,21 @@ import { UserService } from '../user.service';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
+  selectedFile: any;
 
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
     private fb: FormBuilder,
-    private userService: UserService,
+    private userService: UserService
   ) {
-    
     this.signupForm = this.fb.group({
-      name: ['', Validators.required],
-      mobile: ['', Validators.required], 
-      email: ['', Validators.required], 
-      address: ['', Validators.required], 
-      profilePicture: ['', Validators.required],  
-      userType: ['', [Validators.required,]],
-      password: ['', [Validators.required,]], 
-
-      
+      name: [''],
+      mobile: [''],
+      email: [''],
+      address: [''],
+      profilePicture: [''],
+      userType: [''],
+      password: ['']
     });
   }
 
@@ -37,19 +35,28 @@ export class SignupComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  get f() { return this.signupForm.controls; }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
 
-  onSubmit() {
-    if (this.signupForm.valid) {
-      this.userService.signup(this.signupForm.value).subscribe({
+  onSubmit(): void {
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('name', this.signupForm.value.name);
+      formData.append('mobile', this.signupForm.value.mobile);
+      formData.append('email', this.signupForm.value.email);
+      formData.append('address', this.signupForm.value.address);
+      formData.append('userType', this.signupForm.value.userType);
+      formData.append('password', this.signupForm.value.password);
+      formData.append('profilePicture', this.selectedFile);
+
+      this.userService.signup(formData).subscribe({
         next: (response) => {
-          alert("Signup Success...");
+          alert('Signup Success...');
           console.log('Signup successful', response);
-          
         },
         error: (error) => {
           console.error('Signup failed', error);
-          
         }
       });
     }
