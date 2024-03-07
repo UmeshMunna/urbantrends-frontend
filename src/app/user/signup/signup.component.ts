@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
       mobile: [''],
       email: [''],
       address: [''],
-      profilePicture: [''],
+      profilePicture: null,
       userType: [''],
       password: ['']
     });
@@ -49,6 +49,9 @@ export class SignupComponent implements OnInit {
       formData.append('userType', this.signupForm.value.userType);
       formData.append('password', this.signupForm.value.password);
       formData.append('profilePicture', this.selectedFile);
+
+      console.log("PROFILE PICTURE :::");
+      console.log(this.selectedFile);
 
       this.userService.signup(formData).subscribe({
         next: (response) => {

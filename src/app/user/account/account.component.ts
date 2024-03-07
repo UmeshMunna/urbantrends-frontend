@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-account',
@@ -7,24 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
+  constructor(
+    private router: Router,
+    ) { }
+
+
   user: any;
   userName : any;
+  mobile : any;
+  email : any;
+  address : any;
+  userType : any;
+ 
   profilePicUrl: any;
-
 
   ngOnInit(): void {
     
     //this.user = localStorage.getItem('user');
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    console.log("USER ACCOUNT DATA FROM DB ::: ");
     console.log(this.user);
     
     this.userName = this.user.name;
+    this.email = this.user.email;
+    this.mobile = this.user.mobile;
+
     console.log(this.userName);
-    const mobile = localStorage.getItem('mobile');
-    const email = localStorage.getItem('email');
-    const address = localStorage.getItem('address');
-    const profilePicture = localStorage.getItem('profile_pic');
-    const userType = localStorage.getItem('user_type');
 
     this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);
 
@@ -32,11 +42,16 @@ export class AccountComponent implements OnInit {
 
   getProfilePicUrl(data: number[]): string {
     if (data && data.length > 0) {
-      const binary = String.fromCharCode.apply(null, data);
-      return 'data:image/png;base64,' + btoa(binary);
+      const uint8Array = new Uint8Array(data);
+      const binaryString = uint8Array.reduce((acc, value) => acc + String.fromCharCode(value), '');
+      return 'data:image/png;base64,' + btoa(binaryString);
     } else {
       return '';
     }
+  }
+  
+  setLogout(){
+    this.router.navigate(['/']);
   }
 
 
