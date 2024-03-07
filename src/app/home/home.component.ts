@@ -13,6 +13,7 @@ import { LoginComponent } from '../user/login/login.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
+ 
 
   constructor(
     private router: Router,
@@ -26,10 +27,40 @@ export class HomeComponent implements OnInit{
   logoUrl: string = '../../assets/images/logo.jpg'; 
   //logoUrl: string = '../../assets/images/logo.jpg';
 
+  user: any;
+  userName: any;
+  profilePicUrl: any;
+
   ngOnInit(): void {
+
+    
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    if(this.user){
+
+    
+        console.log("USER ACCOUNT DATA FROM DB ::: ");
+        console.log(this.user);
+        
+        this.userName = this.user.name;
+       
+
+        this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);
+
+        
+    }
     
   }
  
+
+  getProfilePicUrl(data: number[]): string {
+    if (data && data.length > 0) {
+      const uint8Array = new Uint8Array(data);
+      const binaryString = uint8Array.reduce((acc, value) => acc + String.fromCharCode(value), '');
+      return 'data:image/png;base64,' + btoa(binaryString);
+    } else {
+      return '';
+    }
+  }
 
   openSignupDialog(): void {
     this.isSignupOpen = true;

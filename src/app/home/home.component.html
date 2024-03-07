@@ -56,7 +56,9 @@
             Login
           </button>    
             
-          <img id="profile-pic" (click)="openAccountPage()" class="rounded-circle" height="25" alt="Profile picture" />
+          <img id="profile-pic" [src]="profilePicUrl" 
+            (click)="openAccountPage()" class="rounded-circle" 
+            style="width: 55px; height: 50px;" height="1000" alt="Profile picture" />
 
         </div>
         

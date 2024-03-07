@@ -51,6 +51,8 @@ export class AccountComponent implements OnInit {
   }
   
   setLogout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 
