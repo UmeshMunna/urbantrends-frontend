@@ -14,15 +14,13 @@ import { LoginComponent } from '../user/login/login.component';
 })
 export class HomeComponent implements OnInit{
  
-
   constructor(
     private router: Router,
     public dialog: MatDialog,
-    ) { }
+  ) { }
 
-
-    isSignupOpen: boolean = false;
-    isLoginOpen: boolean = false;
+  isSignupOpen: boolean = false;
+  isLoginOpen: boolean = false;
 
   logoUrl: string = '../../assets/images/logo.jpg'; 
   //logoUrl: string = '../../assets/images/logo.jpg';
@@ -32,21 +30,16 @@ export class HomeComponent implements OnInit{
   profilePicUrl: any;
 
   ngOnInit(): void {
-
     
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    if(this.user){
-
+    if(this.user == '{}'){
     
         console.log("USER ACCOUNT DATA FROM DB ::: ");
         console.log(this.user);
         
-        this.userName = this.user.name;
-       
+        this.userName = this.user.name;       
 
-        this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);
-
-        
+        this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);  
     }
     
   }
