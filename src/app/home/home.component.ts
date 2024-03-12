@@ -38,10 +38,8 @@ export class HomeComponent implements OnInit{
     if(this.user){
       this.user = JSON.parse(this.user);
       console.log("USER ACCOUNT DATA FROM DB ::: ");
-      console.log(this.user);
-        
-      this.userName = this.user.name;       
-
+      console.log(this.user);        
+      this.userName = this.user.name;
       this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);  
     } 
   }
