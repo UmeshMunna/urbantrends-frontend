@@ -30,21 +30,22 @@ export class HomeComponent implements OnInit{
   profilePicUrl: any;
 
   ngOnInit(): void {
-    
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    if(this.user == '{}'){
-    
-        console.log("USER ACCOUNT DATA FROM DB ::: ");
-        console.log(this.user);
-        
-        this.userName = this.user.name;       
+    this.user = localStorage.getItem('user');
+    console.log("LOCAL STORAGE USER ::: ")
+    console.log(this.user);
+    this.profilePicUrl = '../../assets/images/user_logo.jpg';
 
-        this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);  
-    }
-    
+    if(this.user){
+      this.user = JSON.parse(this.user);
+      console.log("USER ACCOUNT DATA FROM DB ::: ");
+      console.log(this.user);
+        
+      this.userName = this.user.name;       
+
+      this.profilePicUrl = this.getProfilePicUrl(this.user.profile_pic.data);  
+    } 
   }
  
-
   getProfilePicUrl(data: number[]): string {
     if (data && data.length > 0) {
       const uint8Array = new Uint8Array(data);
@@ -80,7 +81,11 @@ export class HomeComponent implements OnInit{
   };
 
   openAccountPage(){
-    this.router.navigate(['user/account']);
+    if(this.user){
+      this.router.navigate(['user/account']);
+    } else{
+      this.openLoginDialog();
+    }
   }
 
 }

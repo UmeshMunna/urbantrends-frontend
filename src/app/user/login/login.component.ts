@@ -65,10 +65,10 @@ export class LoginComponent {
 
           this.closeDialog();
           this.router.navigate(['user/account']);
-
           
         },
         error: (error) => {
+          alert('Invalid user or password')
           console.error('Login failed', error);
           
         }
