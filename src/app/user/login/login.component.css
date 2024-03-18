@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     color: white;
-
     top: 0;
     left: 0;
     width: 535px;
@@ -26,8 +25,11 @@
   }
 
   .model-headings{
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 350px;
+
+    margin-top: 15px;
+    font-size: 30px;
 
   }
   
@@ -35,11 +37,15 @@
     background-color: #1A3754;
     margin-right: 15px;
     margin-left: 5px;
-
     width: 90px;
     height: 40px;
     color: white;
     border: none;
     border-radius: 10px;
   
+  }
+
+  .close-cross{
+    border: none;
+    background: transparent;
   }

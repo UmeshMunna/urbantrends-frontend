@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../user.service';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router'; // Import Router
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
@@ -23,11 +23,9 @@ export class LoginComponent {
     private router: Router,
 
   ) {
-    
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', [Validators.required,]], 
-
       
     });
   }
@@ -38,8 +36,6 @@ export class LoginComponent {
   closeDialog(): void {
     this.dialogRef.close();
   }
-
-  get f() { return this.loginForm.controls; }
 
   onSubmit() {
     if (this.loginForm.valid) {

@@ -5,9 +5,13 @@
 
     
 <div class="overlay">
-<h3 class="model-headings">Signup</h3><hr style="background-color: white;"><br>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <mat-dialog-content class="dialog-content">
+
+    <label class="model-headings">Signup</label>
+    <button class="close-cross" (click)="closeDialog()">✖</button>
+    
+    <hr style="background-color: white;"><br>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <mat-dialog-content class="dialog-content">
 
         <mat-form-field class="signup-form-fields">
             <mat-label>Name</mat-label>
